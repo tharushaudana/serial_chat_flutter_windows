@@ -33,6 +33,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List<String> ports = [];
   SerialPort? port;
+  int baudRate = 115200;
 
   List<List<dynamic>> msgs = [];
 
@@ -58,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (port == null) return;
 
     try {
-      port!.openWithSettings(BaudRate: 115200);
+      port!.openWithSettings(BaudRate: baudRate);
 
       port!.readBytesOnListen(255, (value) {
         String s = String.fromCharCodes(value);
@@ -165,8 +166,25 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                   onChanged: isPortOpened()
                       ? null
-                      : (value) {
+                      : (String? value) {
                           selectPort(value!.toString());
+                        },
+                ),
+                DropdownButton(
+                  hint: const Text("Baud Rate"),
+                  value: baudRate,
+                  items: [
+                    for (int r in [9600, 14400, 19200, 38400, 57600, 115200])
+                      DropdownMenuItem<int>(
+                        value: r,
+                        child: Text(r.toString()),
+                      ),
+                  ],
+                  onChanged: isPortOpened()
+                      ? null
+                      : (int? value) {
+                          baudRate = value!;
+                          setState(() {});
                         },
                 ),
                 const SizedBox(width: 10),
