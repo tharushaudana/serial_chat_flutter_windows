@@ -1,16 +1,33 @@
-# windows_test
+# Serial Chat
 
-A new Flutter project.
+Serial Chat is a simple Flutter application for communicating with serial devices in a chatting style. It allows you to select the COM port and baudrate for communication.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Select COM port and baudrate
+- Communicate with serial devices in a chatting style
 
-A few resources to get you started if this is your first Flutter project:
+## How to Use
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Clone the repository.
+2. Open the project in Flutter.
+3. Run the application on your device or emulator.
+4. Select the COM port and baudrate.
+5. Start chatting with your serial device.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Dependencies
+
+- [serial_port_win32](https://pub.dev/packages/serial_port_win32) - A Flutter package for serial communication on Windows.
+
+## Screenshots
+
+![Screenshot 1](screenshots/screenshot1.png)
+![Screenshot 2](screenshots/screenshot2.png)
+
+## Contributions
+
+Contributions are welcome! If you have any ideas or suggestions to improve this application, feel free to submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
